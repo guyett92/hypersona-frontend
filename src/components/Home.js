@@ -7,13 +7,8 @@ const Home = (props) => {
   return (
     <Container>
       <Section>
-        <h5>
-          <a>Hiring in a hurry? - </a>
-        </h5>
-        <p>
-          Find talented pros in record time with Upwork and keep business
-          moving.
-        </p>
+        <h5>We've got clothes. You've got NFTs. Let's talk.</h5>
+        <p>&nbsp;Connect with us to get started on your persona's brand.</p>
       </Section>
       <Layout>
         <Leftside />
@@ -26,13 +21,8 @@ const Home = (props) => {
 
 const Container = styled.div`
   padding-top: 52px;
-  max-width: 100%;
-`;
-
-const Content = styled.div`
-  max-width: 1128px;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 60%;
+  margin: auto;
 `;
 
 const Section = styled.section`

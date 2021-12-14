@@ -6,7 +6,7 @@ const Header = (props) => {
       <Content>
         <Logo>
           <a href="/home">
-            <img src="/images/home-logo.svg" alt="" />
+            <img src="/images/hypersona.png" width="32" alt=" hypersona logo" />
           </a>
         </Logo>
         <Search>
@@ -29,14 +29,14 @@ const Header = (props) => {
             <NavList>
               <a>
                 <img src="/images/nav-network.svg" alt="" />
-                <span>My Network</span>
+                <span>Connections</span>
               </a>
             </NavList>
 
             <NavList>
               <a>
                 <img src="/images/nav-jobs.svg" alt="" />
-                <span>Jobs</span>
+                <span>Licensing</span>
               </a>
             </NavList>
 
@@ -56,9 +56,11 @@ const Header = (props) => {
 
             <User>
               <a>
-                <img src="/images/user.svg" alt="" />
-                <span>Me</span>
-                <img src="/images/down-icon.svg" alt="" />
+                <img src="/images/user.svg" alt="user icon" />
+                <span>
+                  Me
+                  <img src="/images/down-icon.svg" alt="" />
+                </span>
               </a>
 
               <SignOut>
@@ -70,7 +72,7 @@ const Header = (props) => {
               <a>
                 <img src="/images/nav-work.svg" alt="" />
                 <span>
-                  Work
+                  More
                   <img src="/images/down-icon.svg" alt="" />
                 </span>
               </a>
@@ -113,10 +115,12 @@ const Search = styled.div`
   & > div {
     max-width: 280px;
     input {
-      border: none;
+      border-image-source: linear-gradient(rgba(15, 2, 70), rgba(196, 0, 255));
+      border-width: 3pt;
+      border-image-slice: 1;
       box-shadow: none;
       background-color: #eef3f8;
-      border-radius: 2px;
+      border-radius: 5px;
       color: rgba(0, 0, 0, 0.9);
       width: 218px;
       padding: 0 8px 0 40px;
@@ -124,8 +128,22 @@ const Search = styled.div`
       font-weight: 400;
       font-size: 14px;
       height: 34px;
-      border-color: #dce6f1;
       vertical-align: text-top;
+      @media (max-width: 800px) {
+        width: 200px;
+      }
+      &:focus {
+        outline-width: 0;
+      }
+    }
+  }
+
+  @media (max-width: 340px) {
+    & > div {
+      justify-content: center;
+      input {
+        width: 100px;
+      }
     }
   }
 `;
@@ -134,7 +152,7 @@ const SearchIcon = styled.div`
   width: 40px;
   position: absolute;
   z-index: 1;
-  top: 10px;
+  top: 12px;
   left: 2px;
   border-radius: 0 2px 2px 0;
   margin: 0;
@@ -171,7 +189,7 @@ const NavListWrap = styled.ul`
       position: absolute;
       transition: transform 0.2s ease-in-out;
       width: 100%;
-      border-color: rgba(0, 0, 0, 0.9);
+      border-color: rgba(196, 0, 255);
     }
   }
 `;
@@ -179,6 +197,7 @@ const NavListWrap = styled.ul`
 const NavList = styled.li`
   display: flex;
   align-items: center;
+  justify-content: center;
   a {
     align-items: center;
     background: transparent;
@@ -198,14 +217,34 @@ const NavList = styled.li`
       display: flex;
       align-items: center;
     }
-
     @media (max-width: 768px) {
       min-width: 70px;
     }
   }
+  @media (max-width: 895px) {
+    max-width: 65px;
+  }
+  @media (max-width: 768px) {
+    margin: auto;
+  }
+  @media (max-width: 490px) {
+    max-width: 60px;
+    a {
+      span {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 420px) {
+    max-width: 40px;
+  }
+  @media (max-width: 300px) {
+    max-width: 35px;
+  }
 
   &:hover,
   &:active {
+    background-color: rgba(211, 211, 211, 0.6);
     a {
       span {
         color: rgba(0, 0, 0, 0.9);
@@ -216,15 +255,24 @@ const NavList = styled.li`
 
 const SignOut = styled.div`
   position: absolute;
-  top: 45px;
+  top: 52px;
   background: white;
   border-radius: 0 0 5px 5px;
-  width: 100px;
+  max-width: 80px;
   height: 40px;
   font-size: 16px;
   transition-duration: 167ms;
   text-align: center;
   display: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  &:hover {
+    background-color: rgba(211, 211, 211);
+  }
+  @media (max-width: 768px) {
+    top: initial;
+    bottom: 52px;
+    border-radius: 5px 5px 0 0;
+  }
 `;
 
 const User = styled(NavList)`
@@ -235,7 +283,7 @@ const User = styled(NavList)`
 
   a > img {
     width: 24px;
-    height: 24px;
+    height: px;
     border-radius: 50%;
   }
 
@@ -255,6 +303,10 @@ const User = styled(NavList)`
 
 const Work = styled(User)`
   border-left: 1px solid rgba(0, 0, 0, 0.08);
+  margin-right: 1rem;
+  @media (max-width: 420px) {
+    border: none;
+  }
 `;
 
 export default Header;

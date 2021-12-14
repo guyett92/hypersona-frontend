@@ -5,7 +5,7 @@ const Rightside = (props) => {
     <Container>
       <FollowCard>
         <Title>
-          <h2>Add to your feed</h2>
+          <h2>Find trending collections</h2>
           <img src="/images/feed-icon.svg" alt="" />
         </Title>
 
@@ -15,7 +15,7 @@ const Rightside = (props) => {
               <Avatar />
             </a>
             <div>
-              <span>#Linkedin</span>
+              <span>#BAYC</span>
               <button>Follow</button>
             </div>
           </li>
@@ -24,7 +24,7 @@ const Rightside = (props) => {
               <Avatar />
             </a>
             <div>
-              <span>#Video</span>
+              <span>#DegenApes</span>
               <button>Follow</button>
             </div>
           </li>
@@ -32,14 +32,12 @@ const Rightside = (props) => {
 
         <Recommendation>
           View all recommendations
-          <img src="/images/right-icon.svg" alt="" />
+          <img src="/images/right-icon.svg" alt="right arrow" />
         </Recommendation>
       </FollowCard>
       <BannerCard>
-        <img
-          src="https://static-exp1.licdn.com/scds/common/u/images/promo/ads/li_evergreen_jobs_ad_300x250_v1.jpg"
-          alt=""
-        />
+        <h1>Mystic Sisterhood</h1>
+        <img src="/images/mystic.jpg" alt="mystic sisterhood sister" />
       </BannerCard>
     </Container>
   );
@@ -120,6 +118,11 @@ const Recommendation = styled.a`
 `;
 
 const BannerCard = styled(FollowCard)`
+  h1 {
+    margin-bottom: 0.5rem;
+    color: #0f0246;
+    font-family: NixieOne;
+  }
   img {
     width: 100%;
     height: 100%;

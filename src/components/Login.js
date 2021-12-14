@@ -14,7 +14,7 @@ const Login = (props) => {
       </Nav>
       <Section>
         <Hero>
-          <h1>Welcome to your professional community</h1>
+          <h1>Building the future of NFTs</h1>
           <img src="/images/login-hero.svg" alt="" />
         </Hero>
         <Form>
@@ -46,7 +46,11 @@ const Nav = styled.nav`
     width: 135px;
     height: 34px;
     @media (max-width: 768px) {
-      padding: 0 5px;
+      padding: 0 3px;
+    }
+    @media (max-width: 315px) {
+      width: 99px;
+      padding-top: 6px;
     }
   }
 `;
@@ -62,6 +66,9 @@ const Join = styled.a`
     background-color: rgba(0, 0, 0, 0.08);
     color: rgba(0, 0, 0, 0.9);
     text-decoration: none;
+  }
+  @media (max-width: 363px) {
+    padding: 10px 6px;
   }
 `;
 
@@ -80,6 +87,10 @@ const SignIn = styled.a`
     background-color: rgba(112, 181, 249, 0.15);
     color: #0a66c2;
     text-decoration: none;
+  }
+  @media (max-width: 363px) {
+    font-size: 14px;
+    padding: 10px 12px;
   }
 `;
 

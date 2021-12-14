@@ -1,6 +1,12 @@
+@font-face {
+  font-family: "NixieOne";
+  src: local("NixieOne"), url(./fonts/NixieOne-Regular.ttf) format("truetype");
+}
+
 body {
   overflow-y: scroll;
   overflow-x: hidden;
+  font-family: Arial, sans-serif;
 }
 
 :root,
@@ -37,6 +43,6 @@ ul {
   background: transparent;
 }
 
-body {
-  font-family: Arial, sans-serif;
+a {
+  cursor: pointer;
 }
